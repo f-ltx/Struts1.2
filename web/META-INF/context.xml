@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <Resource name="jdbc/struts"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/struts?characterEncoding=GBK"
+              username="root"
+              password="mysqladmin"
+              maxActive="200"
+              maxIdle="50"
+              maxWait="3000"/>
+</Context>
