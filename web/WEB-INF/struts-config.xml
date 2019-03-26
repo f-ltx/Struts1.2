@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE struts-config PUBLIC
-        "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
-        "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+        <!DOCTYPE struts-config PUBLIC
+                "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+                "http://struts.apache.org/dtds/struts-config_1_2.dtd">
 
 <struts-config>
-    <data-sources/>
-    <form-beans>
-        <form-bean name="saveProductForm" type="mystruts.actionform.ProductForm"/>
-        <form-bean name="searchProductForm" type="mystruts.actionform.ProductForm"/>
-        <form-bean name="simpleValidationForm" type="validate.actionform.SimpleValidationForm" />
-    </form-beans>
-    <global-exceptions/>
-    <global-forwards>
-        <forward name="newProduct" path="/mystruts/newProduct.jsp"/>
-        <forward name="searchProduct" path="/mystruts/searchProduct.jsp"/>
-    </global-forwards>
-    <action-mappings>
-        <action name="saveProductForm" path="/saveProduct" scope="request" type="mystruts.action.SaveProductAction">
-            <forward name="save" path="/mystruts/save.jsp"/>
-        </action>
-        <action name="searchProductForm" path="/searchProduct" scope="request"
-                type="mystruts.action.SearchProductAction">
-            <forward name="search" path="/mystruts/search.jsp"/>
-        </action>
-        <action name="simpleValidationForm" path="/simpleValidation" scope="request" type="validate.action.SimpleValidationAction"
-                input="/validate/simpleValidation.jsp">
-            <forward name="simple" path="/validate/simpleValidation.jsp" />
-        </action>
-    </action-mappings>
-    <message-resources parameter="struts.ApplicationResources"/>
-    <message-resources parameter="struts.ErrorDescription" />
+<data-sources/>
+<form-beans>
+    <form-bean name="saveProductForm" type="mystruts.actionform.ProductForm"/>
+    <form-bean name="searchProductForm" type="mystruts.actionform.ProductForm"/>
+    <form-bean name="simpleValidationForm" type="validate.actionform.SimpleValidationForm"/>
+    <form-bean name="htmlTagsForm" type="actionform.HtmlTagsForm"/>
+</form-beans>
+<global-exceptions/>
+<global-forwards>
+    <forward name="newProduct" path="/mystruts/newProduct.jsp"/>
+    <forward name="searchProduct" path="/mystruts/searchProduct.jsp"/>
+</global-forwards>
+<action-mappings>
+    <action name="saveProductForm" path="/saveProduct" scope="request" type="mystruts.action.SaveProductAction">
+        <forward name="save" path="/mystruts/save.jsp"/>
+    </action>
+    <action name="searchProductForm" path="/searchProduct" scope="request"
+            type="mystruts.action.SearchProductAction">
+        <forward name="search" path="/mystruts/search.jsp"/>
+    </action>
+    <action name="simpleValidationForm" path="/simpleValidation" scope="request"
+            type="validate.action.SimpleValidationAction"
+            input="/validate/simpleValidation.jsp">
+        <forward name="simple" path="/validate/simpleValidation.jsp"/>
+    </action>
+    <action name="htmlTagsForm" path="/htmlTags" scope="request" type="action.HtmlTagsAction"/>
+</action-mappings>
+<message-resources parameter="struts.ApplicationResources"/>
+<message-resources parameter="struts.ErrorDescription"/>
+<message-resources parameter="struts.MyResources" key="my"/>
 </struts-config>
