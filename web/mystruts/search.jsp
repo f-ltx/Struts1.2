@@ -1,6 +1,6 @@
 <%@ page pageEncoding="GBK" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://localhost/c" prefix="c" %>
 <html>
 <body>
 <%-- 从request的result中取出查询结果 --%>

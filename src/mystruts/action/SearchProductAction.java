@@ -27,7 +27,7 @@ public class SearchProductAction extends Action {
             // 有符合条件的产品信息
             if (result.size() > 0) {
                 request.setAttribute("result", result);
-                request.setAttribute("info", "记录数：" + String.valueOf(result.size()));
+                request.setAttribute("info", "记录数：" + result.size());
             } else {
                 // 没有查到任何产品信息
                 request.setAttribute("info", "没有符合要求的记录!");
