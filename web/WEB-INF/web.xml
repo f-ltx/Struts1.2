@@ -13,6 +13,11 @@
             <param-name>config</param-name>
             <param-value>/WEB-INF/struts-config.xml</param-value>
         </init-param>
+        <!--配置上传文件路径-->
+        <init-param>
+            <param-name>uploadPath</param-name>
+            <param-value>/upload/</param-value>
+        </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>

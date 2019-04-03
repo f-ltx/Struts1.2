@@ -11,6 +11,7 @@
     <form-bean name="searchProductForm" type="mystruts.actionform.ProductForm"/>
     <form-bean name="simpleValidationForm" type="validate.actionform.SimpleValidationForm"/>
     <form-bean name="htmlTagsForm" type="actionform.HtmlTagsForm"/>
+    <form-bean name="uploadForm" type="actionform.UploadForm" />
 </form-beans>
 <global-exceptions/>
 <global-forwards>
@@ -31,6 +32,7 @@
         <forward name="simple" path="/validate/simpleValidation.jsp"/>
     </action>
     <action name="htmlTagsForm" path="/htmlTags" scope="request" type="action.HtmlTagsAction"/>
+    <action name="uploadForm" path="/uploadFile" scope="request" type="action.UploadAction" />
 </action-mappings>
 <message-resources parameter="struts.ApplicationResources"/>
 <message-resources parameter="struts.ErrorDescription"/>
