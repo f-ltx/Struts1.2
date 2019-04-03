@@ -26,20 +26,20 @@ public class UploadAction extends Action {
             response.setCharacterEncoding("GBK");
             out = response.getWriter();
             // 将上传文件保存到指写的路径（在web.xml中配置）
-            this.saveFile(uForm.getMyFile());
-            out.println("上传文件成功.");
+            String uploadFilePath = this.saveFile(uForm.getMyFile(), request);
+            out.println("上传文件成功." + uploadFilePath);
         } catch (Exception e) {
             out.println(e.getMessage());
         }
         return null;
     }
 
-    protected void saveFile(FormFile formFile) throws Exception {
+    protected String saveFile(FormFile formFile, HttpServletRequest request) throws Exception {
         // 从web.xml文件中获得指定的上传路径
         String path = super.getServlet().getServletContext().getRealPath("/")
                 + super.getServlet().getServletConfig().getInitParameter("uploadPath");
         File file = new File(path);
-        if(!file.exists()){
+        if (!file.exists()) {
             file.mkdirs();
         }
         // 获得上传文件的InputStream
@@ -54,6 +54,8 @@ public class UploadAction extends Action {
         }
         fout.close();
         formFile.destroy();   // 上传成功后，销毁当前上传文件的资源
-        super.getServlet().getServletContext().getContextPath() + File.separator + formFile.getFileName();
+        return request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+                + request.getContextPath() + super.getServlet().getServletConfig().getInitParameter("uploadPath")
+                + formFile.getFileName();
     }
 }
