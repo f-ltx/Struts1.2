@@ -1,12 +1,11 @@
 # 创建数据库
-DROP DATABASE STRUTS;
-CREATE DATABASE struts;
-# 使用
-USE struts;
+DROP DATABASE if exists struts;
 
 # 建立数据库struts
 CREATE DATABASE IF NOT EXISTS struts
-  DEFAULT CHARACTER SET gbk;
+    DEFAULT CHARACTER SET gbk;
+# 使用
+USE struts;
 
 # 建立表t_products
 CREATE TABLE IF NOT EXISTS struts.t_products (
