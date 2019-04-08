@@ -12,6 +12,7 @@
     <form-bean name="simpleValidationForm" type="validate.actionform.SimpleValidationForm"/>
     <form-bean name="htmlTagsForm" type="actionform.HtmlTagsForm"/>
     <form-bean name="uploadForm" type="actionform.UploadForm" />
+    <form-bean name="uploadMoreForm" type="actionform.UploadMoreForm" />
 </form-beans>
 <global-exceptions/>
 <global-forwards>
@@ -33,6 +34,7 @@
     </action>
     <action name="htmlTagsForm" path="/htmlTags" scope="request" type="action.HtmlTagsAction"/>
     <action name="uploadForm" path="/uploadFile" scope="request" type="action.UploadAction" />
+    <action name="uploadMoreForm" path="/uploadMoreFile" scope="request" type="action.UploadMoreAction" />
 </action-mappings>
 <message-resources parameter="struts.ApplicationResources"/>
 <message-resources parameter="struts.ErrorDescription"/>
