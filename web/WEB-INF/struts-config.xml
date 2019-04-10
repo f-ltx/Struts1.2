@@ -13,7 +13,13 @@
         <form-bean name="htmlTagsForm" type="actionform.HtmlTagsForm"/>
         <form-bean name="uploadForm" type="actionform.UploadForm"/>
         <form-bean name="uploadMoreForm" type="actionform.UploadMoreForm"/>
-        <form-bean name="firstValidatorForm" type="actionform.FirstValidatorForm" />
+        <form-bean name="firstValidatorForm" type="actionform.FirstValidatorForm"/>
+        <form-bean name="dynamicForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="name" type="java.lang.String" />
+            <form-property name="age" type="java.lang.Short" />
+            <form-property name="salary" type="java.lang.Float" />
+            <form-property name="hobby" type="java.lang.String[]" />
+        </form-bean>
     </form-beans>
     <global-exceptions/>
     <global-forwards>
@@ -36,11 +42,14 @@
         <action name="htmlTagsForm" path="/htmlTags" scope="request" type="action.HtmlTagsAction"/>
         <action name="uploadForm" path="/uploadFile" scope="request" type="action.UploadAction"/>
         <action name="uploadMoreForm" path="/uploadMoreFile" scope="request" type="action.UploadMoreAction"/>
-        <action name="firstValidatorForm" path="/firstValidator" scope="request" type="action.ValidatorAction"  input="/firstValidator.jsp"/>
+        <action name="firstValidatorForm" path="/firstValidator" scope="request" type="action.ValidatorAction"
+                input="/firstValidator.jsp"/>
+        <action name="dynamicForm" path="/dynamic" scope="request" type="action.DynamicAction" />
     </action-mappings>
     <message-resources parameter="struts.ApplicationResources"/>
     <message-resources parameter="struts.ErrorDescription"/>
     <message-resources parameter="struts.MyResources" key="my"/>
+    <message-resources parameter="struts.application" key="global"/>
     <!--  验证框架  -->
     <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
         <set-property property="pathnames" value="/WEB-INF/validator-rules.xml, /WEB-INF/validator.xml"/>
