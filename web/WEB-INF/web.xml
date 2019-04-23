@@ -18,6 +18,11 @@
             <param-name>uploadPath</param-name>
             <param-value>/upload/</param-value>
         </init-param>
+        <!--配置下载路径-->
+        <init-param>
+            <param-name>downloadPath</param-name>
+            <param-value>/upload/</param-value>
+        </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>

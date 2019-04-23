@@ -16,3 +16,12 @@ CREATE TABLE IF NOT EXISTS struts.t_products (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = gbk;
+
+--   增加下载次数表
+  use struts;
+  CREATE TABLE struts.t_dcount(
+  id INT NOT NULL,
+  count INT NOT NULL,
+  filename VARCHAR( 256 ) NOT NULL,
+  PRIMARY KEY (id)
+  ) ENGINE = InnoDB  DEFAULT CHARSET=gbk;

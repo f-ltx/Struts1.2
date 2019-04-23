@@ -46,6 +46,7 @@
         <action name="firstValidatorForm" path="/firstValidator" scope="request" type="action.ValidatorAction"
                 input="/firstValidator.jsp"/>
         <action name="dynamicForm" path="/dynamic" scope="request" type="action.DynamicAction" />
+        <action name="dynamicForm" path="/download" scope="request" type="action.FileDownloadAction" />
     </action-mappings>
     <message-resources parameter="struts.ApplicationResources"/>
     <message-resources parameter="struts.ErrorDescription"/>
