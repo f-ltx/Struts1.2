@@ -19,6 +19,8 @@ public class EncodingFilter implements Filter {
                          FilterChain chain) throws IOException, ServletException {
         // 将客户端提交的数据设为GBK编码格式
         request.setCharacterEncoding("GBK");
+        // 将服务端返回的数据设为GBK编码格式
+        response.setCharacterEncoding("GBK");
         // 继续处理客户端提交的数据，如果不写这条语句，Servlet引擎将不会处理所过滤的页面
         chain.doFilter(request, response);
     }

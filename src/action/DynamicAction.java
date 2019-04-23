@@ -1,13 +1,17 @@
 package action;
 
-import javax.servlet.http.*;
-
 import org.apache.struts.action.*;
 
-import java.io.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Description:动态form
+ *
  * @author ltx
  * @date 19-4-10
  */
@@ -28,6 +32,13 @@ public class DynamicAction extends Action {
             out.println("salary: " + salary + "<p/>");
             for (int i = 0; i < hobbyCount; i++) {
                 out.println("hobby" + (i + 1) + ": " + dForm.get("hobby", i) + "<p/>");
+            }
+            Map map = (Map) dForm.get("hello");
+            Set<Map.Entry<String, String>> set = map.entrySet();
+            Iterator<Map.Entry<String, String>> iterator = set.iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<String, String> entry = iterator.next();
+                out.println("map - hello key =" + entry.getKey() + ", map - hello value =" + entry.getValue() + "<p/>");
             }
         } catch (Exception e) {
         }

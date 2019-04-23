@@ -19,6 +19,10 @@
 <p>
     °®ºÃ3£º<html:text property="hobby" value=""/>&nbsp;&nbsp;
 <p>
+    map£º<html:text property="hello(a)" value=""/>&nbsp;&nbsp;
+<p>
+    map£º<html:text property="hello(b)" value=""/>&nbsp;&nbsp;
+<p>
         <html:submit value="Ìá½»"/>
     </html:form>
 </body>
