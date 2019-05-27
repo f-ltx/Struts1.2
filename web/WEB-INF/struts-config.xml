@@ -15,11 +15,19 @@
         <form-bean name="uploadMoreForm" type="actionform.UploadMoreForm"/>
         <form-bean name="firstValidatorForm" type="actionform.FirstValidatorForm"/>
         <form-bean name="dynamicForm" type="org.apache.struts.action.DynaActionForm">
-            <form-property name="name" type="java.lang.String" />
-            <form-property name="age" type="java.lang.Short" />
-            <form-property name="salary" type="java.lang.Float" />
-            <form-property name="hobby" type="java.lang.String[]" />
-            <form-property name="hello" type="java.util.HashMap" />
+            <form-property name="name" type="java.lang.String"/>
+            <form-property name="age" type="java.lang.Short"/>
+            <form-property name="salary" type="java.lang.Float"/>
+            <form-property name="hobby" type="java.lang.String[]"/>
+            <form-property name="hello" type="java.util.HashMap"/>
+        </form-bean>
+        <form-bean name="EnglishForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="language" type="java.lang.String" initial="en"/>
+            <form-property name="country" type="java.lang.String" initial="US"/>
+        </form-bean>
+        <form-bean name="ChineseForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="language" type="java.lang.String" initial="zh"/>
+            <form-property name="country" type="java.lang.String" initial="CN"/>
         </form-bean>
     </form-beans>
     <global-exceptions/>
@@ -45,8 +53,14 @@
         <action name="uploadMoreForm" path="/uploadMoreFile" scope="request" type="action.UploadMoreAction"/>
         <action name="firstValidatorForm" path="/firstValidator" scope="request" type="action.ValidatorAction"
                 input="/firstValidator.jsp"/>
-        <action name="dynamicForm" path="/dynamic" scope="request" type="action.DynamicAction" />
-        <action name="dynamicForm" path="/download" scope="request" type="action.FileDownloadAction" />
+        <action name="dynamicForm" path="/dynamic" scope="request" type="action.DynamicAction"/>
+        <action name="dynamicForm" path="/download" scope="request" type="action.FileDownloadAction"/>
+        <action name="EnglishForm" path="/en" type="org.apache.struts.actions.LocaleAction">
+            <forward name="success" path="/global.jsp"/>
+        </action>
+        <action name="ChineseForm" path="/zh" type="org.apache.struts.actions.LocaleAction">
+            <forward name="success" path="/global.jsp"/>
+        </action>
     </action-mappings>
     <message-resources parameter="struts.ApplicationResources"/>
     <message-resources parameter="struts.ErrorDescription"/>
