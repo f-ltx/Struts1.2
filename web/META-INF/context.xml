@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/">
+    <!--  url加入serverTimezone=GMT%2B8 设置东八区-->
     <Resource name="jdbc/struts"
               auth="Container"
               type="javax.sql.DataSource"
