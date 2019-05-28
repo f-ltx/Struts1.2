@@ -61,6 +61,12 @@
         <action name="ChineseForm" path="/zh" type="org.apache.struts.actions.LocaleAction">
             <forward name="success" path="/global.jsp"/>
         </action>
+        <action path="/include" type="org.apache.struts.actions.IncludeAction"
+                input="/firstValidator.jsp" validate="false"
+                name="firstValidatorForm" parameter="/firstValidator.jsp"/>
+        <action path="/forward" type="org.apache.struts.actions.ForwardAction"
+                input="/firstValidator.jsp" validate="false"
+                name="firstValidatorForm" parameter="/firstValidator.jsp" />
     </action-mappings>
     <message-resources parameter="struts.ApplicationResources"/>
     <message-resources parameter="struts.ErrorDescription"/>
