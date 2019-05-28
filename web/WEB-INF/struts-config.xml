@@ -67,6 +67,7 @@
         <action path="/forward" type="org.apache.struts.actions.ForwardAction"
                 input="/firstValidator.jsp" validate="false"
                 name="firstValidatorForm" parameter="/firstValidator.jsp" />
+        <action path="/locale" type="action.MyDispatchAction" parameter="language"/>
     </action-mappings>
     <message-resources parameter="struts.ApplicationResources"/>
     <message-resources parameter="struts.ErrorDescription"/>
